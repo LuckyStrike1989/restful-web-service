@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/my-restful-service/my-restful-service.iml" filepath="$PROJECT_DIR$/my-restful-service/my-restful-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/restful-web-service-review.iml" filepath="$PROJECT_DIR$/.idea/restful-web-service-review.iml" />
+    </modules>
+  </component>
+</project>
