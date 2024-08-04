@@ -16,9 +16,9 @@ public class UserDaoService implements IUserDaoService {
     private static int usersCount = 3;
 
     static {
-        users.add(new User(1, "Kenneth", new Date()));
-        users.add(new User(2, "Alice", new Date()));
-        users.add(new User(3, "Elena", new Date()));
+        users.add(new User(1, "Kenneth", new Date(), "1234", "890000-1222222"));
+        users.add(new User(2, "Alice", new Date(), "2345", "800000-1222222"));
+        users.add(new User(3, "Elena", new Date(), "3456", "770000-1222222"));
     }
 
     @Override
