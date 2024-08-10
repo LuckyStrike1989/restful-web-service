@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface ITestService {
     public List<Member> getAllMembers();
+
+    public void test();
 }
