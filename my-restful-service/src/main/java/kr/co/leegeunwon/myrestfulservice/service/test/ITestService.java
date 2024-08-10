@@ -1,6 +1,6 @@
-package kr.co.leegeunwon.myrestfulservice.dao;
+package kr.co.leegeunwon.myrestfulservice.service.test;
 
-import kr.co.leegeunwon.myrestfulservice.bean.Member;
+import kr.co.leegeunwon.myrestfulservice.domain.member.Member;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package kr.co.leegeunwon.myrestfulservice.bean;
+package kr.co.leegeunwon.myrestfulservice.domain.member;
 
 import jakarta.persistence.*;
 import lombok.AccessLevel;

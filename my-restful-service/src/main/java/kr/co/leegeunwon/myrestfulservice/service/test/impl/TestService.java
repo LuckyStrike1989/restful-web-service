@@ -1,8 +1,8 @@
-package kr.co.leegeunwon.myrestfulservice.dao.impl;
+package kr.co.leegeunwon.myrestfulservice.service.test.impl;
 
-import kr.co.leegeunwon.myrestfulservice.bean.Member;
-import kr.co.leegeunwon.myrestfulservice.dao.ITestService;
-import kr.co.leegeunwon.myrestfulservice.repository.MemberRepository;
+import kr.co.leegeunwon.myrestfulservice.domain.member.Member;
+import kr.co.leegeunwon.myrestfulservice.service.test.ITestService;
+import kr.co.leegeunwon.myrestfulservice.repository.member.MemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

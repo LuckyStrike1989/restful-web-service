@@ -1,4 +1,4 @@
-package kr.co.leegeunwon.myrestfulservice.dao;
+package kr.co.leegeunwon.myrestfulservice.service.user;
 
 import kr.co.leegeunwon.myrestfulservice.bean.User;
 

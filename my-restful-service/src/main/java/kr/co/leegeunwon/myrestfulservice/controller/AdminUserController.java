@@ -3,20 +3,16 @@ package kr.co.leegeunwon.myrestfulservice.controller;
 import com.fasterxml.jackson.databind.ser.FilterProvider;
 import com.fasterxml.jackson.databind.ser.impl.SimpleBeanPropertyFilter;
 import com.fasterxml.jackson.databind.ser.impl.SimpleFilterProvider;
-import jakarta.validation.Valid;
 import kr.co.leegeunwon.myrestfulservice.bean.AdminUser;
 import kr.co.leegeunwon.myrestfulservice.bean.AdminUserV2;
 import kr.co.leegeunwon.myrestfulservice.bean.User;
-import kr.co.leegeunwon.myrestfulservice.dao.IUserDaoService;
+import kr.co.leegeunwon.myrestfulservice.service.user.IUserDaoService;
 import kr.co.leegeunwon.myrestfulservice.exception.UserNotFoundException;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.json.MappingJacksonValue;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
 

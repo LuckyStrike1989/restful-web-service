@@ -1,7 +1,7 @@
-package kr.co.leegeunwon.myrestfulservice.dao.impl;
+package kr.co.leegeunwon.myrestfulservice.service.user.impl;
 
 import kr.co.leegeunwon.myrestfulservice.bean.User;
-import kr.co.leegeunwon.myrestfulservice.dao.IUserDaoService;
+import kr.co.leegeunwon.myrestfulservice.service.user.IUserDaoService;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;

@@ -2,7 +2,7 @@ package kr.co.leegeunwon.myrestfulservice.controller;
 
 import jakarta.validation.Valid;
 import kr.co.leegeunwon.myrestfulservice.bean.User;
-import kr.co.leegeunwon.myrestfulservice.dao.IUserDaoService;
+import kr.co.leegeunwon.myrestfulservice.service.user.IUserDaoService;
 import kr.co.leegeunwon.myrestfulservice.exception.UserNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
