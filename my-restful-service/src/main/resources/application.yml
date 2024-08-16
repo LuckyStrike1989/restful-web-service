@@ -15,6 +15,14 @@ spring:
     username: sa
     password:
 
+## actuator
+management:
+  endpoints:
+    web:
+      exposure:
+        ##include: "*"
+        include: "self,health,beans"
+
 ##logging:
 ##  level:
 ##    org.springframework: debug
