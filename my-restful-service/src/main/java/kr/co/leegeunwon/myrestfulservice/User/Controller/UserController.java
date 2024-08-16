@@ -1,5 +1,10 @@
 package kr.co.leegeunwon.myrestfulservice.User.Controller;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import kr.co.leegeunwon.myrestfulservice.User.bean.User;
 import kr.co.leegeunwon.myrestfulservice.User.service.IUserDaoService;
@@ -18,6 +23,7 @@ import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 
 @RestController
+@Tag(name = "user-controller", description = "일반 사용자 서비스를 위한 컨트롤러입니다.")
 public class UserController {
     @Autowired
     private IUserDaoService userDaoService;
@@ -27,8 +33,17 @@ public class UserController {
         return userDaoService.findAll();
     }
 
+    @Operation(summary = "사용자 정보 조회 API", description = "사용자 ID를 이용해서 사용자 상세 정보 조회를 합니다.")
+    @ApiResponses({
+        @ApiResponse(responseCode = "200", description = "OK"),
+        @ApiResponse(responseCode = "400", description = "BAD_REQUEST"),
+        @ApiResponse(responseCode = "404", description = "USER_NOT_FOUND"),
+        @ApiResponse(responseCode = "500", description = "INTERNAL_SERVER_ERROR"),
+    })
     @GetMapping("/users/{id}")
-    public EntityModel<User> retrieveUser(@PathVariable int id) {
+    public EntityModel<User> retrieveUser(
+           @Parameter(description = "사용자 ID", required = true, example = "1") @PathVariable int id
+    ) {
         User user = userDaoService.findOne(id);
 
         // 사용자가 없을 경우, 예외를 발생시킨다.
