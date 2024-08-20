@@ -41,7 +41,7 @@ public class UserController {
         @ApiResponse(responseCode = "500", description = "INTERNAL_SERVER_ERROR"),
     })
     @GetMapping("/users/{id}")
-    public EntityModel<User> retrieveUser(
+    public ResponseEntity<EntityModel<User>> retrieveUser(
            @Parameter(description = "사용자 ID", required = true, example = "1") @PathVariable int id
     ) {
         User user = userDaoService.findOne(id);
@@ -51,13 +51,16 @@ public class UserController {
             throw new UserNotFoundException(String.format("ID[%s] not found", id));
         }
 
-        EntityModel entityModel = EntityModel.of(user);
-
         // 링크를 만든다
-        WebMvcLinkBuilder linTo = linkTo(methodOn(this.getClass()).retrieveAllUsers());
-        entityModel.add(linTo.withRel("all-users"));    // http://localhost:8080/users -> all-users
+        //EntityModel entityModel = EntityModel.of(user);
+        // WebMvcLinkBuilder linTo = linkTo(methodOn(this.getClass()).retrieveAllUsers());
+        // entityModel.add(linTo.withRel("all-users"));    // http://localhost:8080/users -> all-users
 
-        return entityModel;
+        return ResponseEntity.ok().body(
+                EntityModel.of(user)
+                        .add(linkTo(methodOn(this.getClass()).retrieveUser(id)).withSelfRel()) // http://localhost:8080/users/1 -> self
+                        .add(linkTo(methodOn(this.getClass()).retrieveAllUsers()).withRel("all-users")) // http://localhost:8080/users -> all-users
+        );
     }
 
     @PostMapping("/users")
